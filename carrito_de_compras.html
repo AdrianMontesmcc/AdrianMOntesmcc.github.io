@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        /* Agrega estilos según sea necesario */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #payment-options {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        #payment-options button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #card-details {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Checkout</h1>
+
+    <div id="payment-options">
+        <button onclick="showCardDetails()">Pagar con Tarjeta</button>
+        <button onclick="payWithPayPal()">Pagar con PayPal</button>
+    </div>
+
+    <div id="card-details">
+        <h2>Detalles de la Tarjeta</h2>
+        <form id="card-form">
+            <label for="card-number">Número de Tarjeta:</label>
+            <input type="text" id="card-number" required><br>
+
+            <label for="expiration-date">Fecha de Expiración:</label>
+            <input type="text" id="expiration-date" placeholder="MM/YY" required><br>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" required><br>
+
+            <button type="submit">Pagar</button>
+        </form>
+    </div>
+   <script>
+        function showCardDetails() {
+            document.getElementById('card-details').style.display = 'block';
+        }
+
+        function payWithPayPal() {
+            alert('Redireccionando a PayPal...');
+          
+        }
+
+        document.getElementById('card-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Procesando pago con tarjeta...');
+            
+        });
+    </script>
+</body>
+</html>
